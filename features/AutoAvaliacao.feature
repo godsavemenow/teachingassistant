@@ -15,3 +15,4 @@ Given Estou na “Tela de aluno”
 And Me vejo sem auto-avaliação
 When Me auto-avalio com “MA”
 Then Recebo um alert com “Avaliação Válida”
+
