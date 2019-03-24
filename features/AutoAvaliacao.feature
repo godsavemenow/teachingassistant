@@ -16,3 +16,11 @@ And Me vejo sem auto-avaliação
 When Me auto-avalio com “MA”
 Then Recebo um alert com “Avaliação Válida”
 
+Scenario: 1 aluno de 3 com discrepância
+Given Estou na “Tela de professor”
+And Vejo que 1 (33%) auto-avaliação está discrepante.
+When Requisito alteração
+Then Recebo um alert com “Alteração solicitada”
+And Retorno a tela e auto-avaliação
+
+
