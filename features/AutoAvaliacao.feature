@@ -15,7 +15,6 @@ Given Estou na “Tela de aluno”
 And Me vejo sem auto-avaliação
 When Me auto-avalio com “MA”
 Then Recebo um alert com “Avaliação Válida”
-And Retorno a tela e auto-avaliação
 
 Scenario: 1 aluno de 3 com discrepância
 Given Estou na “Tela de professor”
