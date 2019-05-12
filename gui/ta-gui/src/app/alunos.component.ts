@@ -15,7 +15,7 @@ export class AlunosComponent implements OnInit {
    aluno: Aluno = new Aluno();
    alunos: Aluno[];
    cpfduplicado: boolean = false;
-
+   userdeletado: boolean = false;
    criarAluno(a: Aluno): void {
      this.alunoService.criar(a)
         .then(ab => {
@@ -28,6 +28,18 @@ export class AlunosComponent implements OnInit {
         })
         .catch(erro => alert(erro));
    }
+   deletarAluno(a: Aluno): void {
+      this.alunoService.deletar(a)
+         .then(ab => {
+            if (ab) {
+               this.alunos.push(ab);
+               this.aluno = new Aluno();
+            } else {
+               this.userdeletado = true;
+            }
+         })
+         .catch(erro => alert(erro));
+    }
 
    onMove(): void {
       this.cpfduplicado = false;

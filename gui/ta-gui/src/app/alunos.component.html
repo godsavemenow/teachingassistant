@@ -3,32 +3,42 @@
 <table>
 <tr>
    <td><label>Nome </label></td>
-   <td><input [(ngModel)]="aluno.nome" name="namebox"></td>
-   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
-</tr>
-<tr>
-   <td><label>CPF </label></td>
-   <td><input [(ngModel)]="aluno.cpf" name="cpfbox"></td>
-   <td *ngIf="cpfduplicado">
-     Já existe um aluno com esse CPF
+   <td><input [(ngModel)]="aluno.nome" ></td>
+   <td><button (click)="criarAluno(aluno)">Adicionar</button>
    </td>
 </tr>
 <tr>
-   <td><label>e-mail </label></td>
-   <td><input [(ngModel)]="aluno.email"></td>
+   <td><label>Git </label></td>
+   <td><input [(ngModel)]="aluno.git"></td>
+    
 </tr>
+<tr>
+   <td><label>e-mail </label></td>
+   <td><input [(ngModel)]="aluno.email" ></td>
+</tr>
+<tr>
+   <td><label>CPF </label></td>
+   <td><input [(ngModel)]="aluno.cpf" ></td>
+   <td *ngIf="cpfduplicado">
+     Já existe um aluno com esse CPF ou git
+   </td>
+</tr>
+
 </table>
 
 <table>
 <tr *ngIf="alunos.length > 0">
    <th>Nome</th>
+   <th>git</th>
    <th>CPF</th>
    <th>e-mail</th>
 </tr>
-<tr *ngFor="let a of alunos" name="alunolist">
-   <td name="nomelist">{{a.nome}}</td>
-   <td name="cpflist">{{a.cpf}}</td>
+<tr *ngFor="let a of alunos">
+   <td>{{a.nome}}</td>
+   <td>{{a.git}}</td>
+   <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
+   <td><button (click)="deletarAluno(a)">Deletar</button> <td *ngIf="userdeletado">Já existe um aluno com esse CPF ou git</td>
 </tr>
 </table>
 
